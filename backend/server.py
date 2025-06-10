@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
+import sys
 import logging
 from pathlib import Path
 from pydantic import BaseModel, Field, EmailStr
@@ -12,15 +13,18 @@ from datetime import datetime, timedelta
 from enum import Enum
 import asyncio
 
+# Add current directory to Python path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 # Import custom modules
-from .models import (
+from models import (
     UserProfile, Job, JobCreate, Application, ApplicationCreate, 
     CoverLetter, CoverLetterCreate, EmailLog, JobSearchRequest,
     ApplicationStatus, JobSource
 )
-from .services.ai_service import AIService
-from .services.email_service import EmailService
-from .services.scraper_service import ScraperService
+from services.ai_service import AIService
+from services.email_service import EmailService
+from services.scraper_service import ScraperService
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
