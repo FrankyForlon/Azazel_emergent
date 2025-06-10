@@ -1,5 +1,6 @@
+import asyncio
 from emergentintegrations.llm.chat import LlmChat, UserMessage
-from .models import UserProfile
+from models import UserProfile
 import logging
 
 logger = logging.getLogger(__name__)
