@@ -39,7 +39,7 @@ class EmailService:
                         <p>Dear Hiring Manager,</p>
                         
                         <div style="background-color: #f8f9fa; padding: 20px; border-left: 4px solid #007bff; margin: 20px 0;">
-                            {cover_letter['content'].replace('\\n', '<br>')}
+                            {cover_letter['content'].replace(chr(10), '<br>')}
                         </div>
                         
                         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
