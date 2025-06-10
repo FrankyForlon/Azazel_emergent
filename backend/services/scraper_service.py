@@ -3,7 +3,7 @@ import aiohttp
 from bs4 import BeautifulSoup
 import logging
 from typing import List, Dict, Any, Optional
-from models import Job, JobSource, JobSearchRequest
+from .models import Job, JobSource, JobSearchRequest
 from datetime import datetime
 import re
 import os
