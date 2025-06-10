@@ -13,14 +13,14 @@ from enum import Enum
 import asyncio
 
 # Import custom modules
-from models import (
+from .models import (
     UserProfile, Job, JobCreate, Application, ApplicationCreate, 
     CoverLetter, CoverLetterCreate, EmailLog, JobSearchRequest,
     ApplicationStatus, JobSource
 )
-from services.ai_service import AIService
-from services.email_service import EmailService
-from services.scraper_service import ScraperService
+from .services.ai_service import AIService
+from .services.email_service import EmailService
+from .services.scraper_service import ScraperService
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
